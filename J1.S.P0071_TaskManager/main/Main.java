@@ -13,6 +13,7 @@ public class Main {
 
     private static final Scanner sc = new Scanner(System.in);
 
+    // Phuong thuc chinh dieu huong luong hoat động cua toan bo chuong trinh
     public static void main(String[] args) {
         Controller control = new Controller();
         TaskDTO dto = new TaskDTO();
@@ -47,10 +48,11 @@ public class Main {
         dto.setRequirementName(getString(Message.INPUT_REQUIREMENT_NAME, Constants.REGEX_REQUIMENT_NAME));
         dto.setTaskType(TaskType.getTaskTypeByID(getInt(Message.INPUT_TASK_TYPE_CHOICE, 1, 4)));
         dto.setDate(getDate(Message.INPUT_DATE, Constants.DATE_FORMAT_PATTERN));
-        
+
         double planFrom = getDouble(Message.INPUT_PLAN_FROM, 8.0, 17.0);
         double planTo = getDouble(Message.INPUT_PLAN_TO, planFrom + 0.5, 17.5);
-        
+
+        // planTo phải lớn hơn planFrom ít nhất 0.5
         dto.setPlanFrom(planFrom);
         dto.setPlanTo(planTo);
         dto.setAssign(getString(Message.INPUT_ASSIGNEE, Constants.REGEX_NAME_PEOPLE));
