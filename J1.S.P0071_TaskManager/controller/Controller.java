@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import constant.Message;
@@ -12,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import repository.TaskRepository;
 import view.TaskView;
-
 
 public class Controller {
 
@@ -35,39 +29,39 @@ public class Controller {
     }
 
     public void addTask() {
-        // Thực hiện thêm và kiểm tra kết quả trả về
+        // thuc hien them va kiem tra ket qua tra ve
         int generatedId = taskRepository.addTask(taskDto);
         if (generatedId > 0) {
-            taskView.printMessage(Message.SUCCESS_ADD_MESSAGE); 
+            taskView.printMessage(Message.SUCCESS_ADD_MESSAGE);
         } else {
-            taskView.printMessage(Message.ERROR_CANNOT_ADD); 
+            taskView.printMessage(Message.ERROR_CANNOT_ADD);
         }
     }
 
     public void deleteTask() {
-        // Logic kiểm tra ID tồn tại trước khi xóa (Thay cho Service)
+        // Logic kiem tra ID ton tai truoc khi xoa (Thay cho Service)
         if (taskRepository.findById(taskDto.getId()) == null) {
-            taskView.printMessage(Message.ERROR_CANNOT_FOUND); 
+            taskView.printMessage(Message.ERROR_CANNOT_FOUND);
             return;
         }
 
         if (taskRepository.deleteTask(taskDto.getId())) {
-            taskView.printMessage(Message.SUCCESS_DELETE_MESSAGE); 
+            taskView.printMessage(Message.SUCCESS_DELETE_MESSAGE);
         }
     }
 
     public void showTasks() {
         try {
-            // Kiểm tra danh sách trống trước khi lấy dữ liệu
+            // Kiem tra danh sach trong truoc khi lay du lieu
             if (taskRepository.isEmpty()) {
                 throw new Exception(Message.ERROR_EMPTY);
             }
-            // Yêu cầu View hiển thị
+            // yeu cau View hien thi
             List<ResponseDTO> response = taskRepository.getAllTasks();
             taskView.setResponseDTO(response);
             taskView.printTask();
         } catch (Exception ex) {
-            taskView.printMessage(ex.getMessage()); 
+            taskView.printMessage(ex.getMessage());
         }
     }
 
