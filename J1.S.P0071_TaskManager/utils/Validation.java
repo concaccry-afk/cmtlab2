@@ -7,9 +7,11 @@ import java.util.Date;
 
 public class Validation {
 
+    // Khoi tao private constructor de ngan chan viec tao the hien cua lop tien ich
     private Validation() {
     }
 
+    // Kiem tra va phan tich gia tri so nguyen nhap vao nam trong khoang cho phep
     public static int getInt(String input, int min, int max) throws Exception {
         try {
             int check = Integer.parseInt(input);
@@ -30,6 +32,7 @@ public class Validation {
         throw new Exception(Message.ERROR_INVALID_GENERAL);
     }
 
+    // Kiem tra va chuyen doi chuoi thanh doi tuong ngay thang nam theo dinh dang
     public static Date getDate(String input, final String REGEX) throws Exception {
         SimpleDateFormat dateFormat = new SimpleDateFormat(REGEX);
         dateFormat.setLenient(false);
@@ -43,6 +46,7 @@ public class Validation {
         }
     }
 
+    // Kiem tra va phan tich gia tri so thuc nhap vao nam trong khoang va buoc nhay hop le
     public static double getDouble(String input, double min, double max) throws Exception {
         try {
             double check = Double.parseDouble(input);
