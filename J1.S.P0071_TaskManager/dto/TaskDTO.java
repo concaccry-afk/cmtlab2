@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dto;
 
 import java.util.Date;
 import constant.TaskType;
 
-
 public class TaskDTO {
 
+    // Khai bao cac thuoc tinh cua doi tuong TaskDTO de truyen nhan du lieu
     private int id;
     private TaskType taskType;
     private String requirementName;
@@ -20,9 +15,11 @@ public class TaskDTO {
     private String assign;
     private String reviewer;
 
+    // Ham khoi tao khong tham so
     public TaskDTO() {
     }
 
+    // Cac phuong thuc getter lay gia tri thuoc tinh
     public int getId() {
         return id;
     }
@@ -83,6 +80,7 @@ public class TaskDTO {
         return reviewer;
     }
 
+    // Cac phuong thuc setter gan gia tri cho thuoc tinh
     public void setReviewer(String reviewer) {
         this.reviewer = reviewer;
     }
