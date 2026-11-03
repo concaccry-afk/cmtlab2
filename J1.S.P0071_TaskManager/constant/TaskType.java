@@ -5,8 +5,8 @@
  */
 package constant;
 
-
 public enum TaskType {
+    // Dinh nghia cac hang so loai task kem theo ma id va ten hien thi
     CODE(1, "Code"),
     TEST(2, "Test"),
     DESIGN(3, "Design"),
@@ -15,12 +15,13 @@ public enum TaskType {
     private int id;
     private String name;
 
-    // Constructor for the enum
+    // Ham khoi tạo cho enum de gan gia tri id va ten
     private TaskType(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
+    // Phương thức tim kiem va tra ve loai TaskType dua vao ma id truyen vao
     public static TaskType getTaskTypeByID(int ID) {
         switch (ID) {
             case 1:
@@ -36,10 +37,12 @@ public enum TaskType {
         }
     }
 
+    // Lay gia tri id cua loai task
     public int getId() {
         return id;
     }
 
+    // Lay ten cua loai task
     public String getName() {
         return name;
     }
