@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package constant;
 
 public class Message {
@@ -9,12 +5,17 @@ public class Message {
     private Message() {
     }
 
+    // khai bao tieu de hien thi cho menu
     public static final String MENU_HEADER = "========= Task program =========\n";
+
+    // khai bao lua chon chuc nang trong menu
     public static final String MENU_BODY
             = "1. Add task\n"
             + "2. Delete tasks\n"
             + "3. Display task\n"
             + "4. Quit";
+
+    // thong bao yeu cau nguoi dung nhap lua chon chuc nang
     public static final String INPUT_CHOICE = "Your choice: ";
     public static final String INPUT_TASK_ID = "Task ID: ";
     public static final String INPUT_REQUIREMENT_NAME = "Requirement Name: ";
@@ -31,20 +32,21 @@ public class Message {
     public static final String INPUT_ASSIGNEE = "Assignee: ";
     public static final String INPUT_REVIEWER = "Reviewer: ";
 
+    // Khoi tao cac thong bao loi khi du lieu hoac thao tac khong hop le
     public static final String ERROR_INVALID_GENERAL = "Invalid!";
     public static final String REAL_NUMBER_RANGE_ERROR = "Please input number in a range %.1f -> %.1f";
     public static final String INTERGER_NUMBER_RANGE_ERROR = "Please input number in a range %d -> %d";
     public static final String ERROR_INVALID_DATE_FORMAT = "Invalid! Format dd-mm-yyyy";
     public static final String ERROR_PLAN_TO_RANGE_MAX = "Just be large than plan From and less than 17.5";
     public static final String ERROR_INVALID_REAL_NUMBER = "Please enter real number!";
-    
+
     public static final String ERROR_CANNOT_ADD = "Can not add!!!";
     public static final String ERROR_INVALID_TASK_TYPE_ID = "Invalid Task Type ID.";
     public static final String ERROR_CANNOT_DELETE = "Can not delete!!!";
     public static final String ERROR_CANNOT_FOUND = "Task does not exist!";
     public static final String ERROR_EMPTY = "List Task is empty!";
 
+    // Khoi tao cac thong bao trang thai thanh cong
     public static final String SUCCESS_ADD_MESSAGE = "Add success!";
     public static final String SUCCESS_DELETE_MESSAGE = "Delete success!";
-
 }
